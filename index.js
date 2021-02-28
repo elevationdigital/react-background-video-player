@@ -176,13 +176,13 @@ export default class BackgroundVideo extends React.PureComponent {
         onKeyPress={this.props.onKeyPress}
         tabIndex={this.props.tabIndex}>
         {typeof this.props.src === 'object' ? (
-          <video {...videoProps} className={this.props.videoClasses}>
+          <video {...videoProps} className={this.props.videoClasses} style={Object.assign({}, this.props.videoStyles)}>
             {this.props.src.map((source, key) => (
               <source key={key} {...source} />
             ))}
           </video>
         ) : (
-          <video {...videoProps} className={this.props.videoClasses} />
+          <video {...videoProps} className={this.props.videoClasses} style={Object.assign({}, this.props.videoStyles)} />
         )}
       </div>
     );
@@ -193,6 +193,7 @@ BackgroundVideo.propTypes = {
   playsInline: PropTypes.bool, // play inline on iPhone. avoid triggering native video player
   disableBackgroundCover: PropTypes.bool, // do not apply cover effect (e.g. disable it for specific screen resolution or aspect ratio)
   style: PropTypes.object,
+  videoStyles: PropTypes.object,
   className: PropTypes.string,
   videoClasses: PropTypes.string,
   containerWidth: PropTypes.number,

@@ -235,11 +235,11 @@ var BackgroundVideo = function (_React$PureComponent) {
           tabIndex: this.props.tabIndex },
         _typeof(this.props.src) === 'object' ? _react2.default.createElement(
           'video',
-          _extends({}, videoProps, { className: this.props.videoClasses }),
+          _extends({}, videoProps, { className: this.props.videoClasses, style: Object.assign({}, this.props.videoStyles) }),
           this.props.src.map(function (source, key) {
             return _react2.default.createElement('source', _extends({ key: key }, source));
           })
-        ) : _react2.default.createElement('video', _extends({}, videoProps, { className: this.props.videoClasses }))
+        ) : _react2.default.createElement('video', _extends({}, videoProps, { className: this.props.videoClasses, style: Object.assign({}, this.props.videoStyles) }))
       );
     }
   }]);
@@ -254,6 +254,7 @@ BackgroundVideo.propTypes = {
   playsInline: _propTypes2.default.bool, // play inline on iPhone. avoid triggering native video player
   disableBackgroundCover: _propTypes2.default.bool, // do not apply cover effect (e.g. disable it for specific screen resolution or aspect ratio)
   style: _propTypes2.default.object,
+  videoStyles: _propTypes2.default.object,
   className: _propTypes2.default.string,
   videoClasses: _propTypes2.default.string,
   containerWidth: _propTypes2.default.number,
