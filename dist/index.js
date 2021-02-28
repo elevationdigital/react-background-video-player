@@ -239,7 +239,7 @@ var BackgroundVideo = function (_React$PureComponent) {
           this.props.src.map(function (source, key) {
             return _react2.default.createElement('source', _extends({ key: key }, source));
           })
-        ) : _react2.default.createElement('video', videoProps)
+        ) : _react2.default.createElement('video', _extends({}, videoProps, { className: this.props.videoClasses }))
       );
     }
   }]);
