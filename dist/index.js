@@ -43,14 +43,6 @@ var iOSVersion = iOSNavigator ? iOSNavigator[1] : null;
 
 var noop = function noop() {};
 
-var absolute100 = {
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  width: '100%',
-  height: '100%'
-};
-
 var BackgroundVideo = function (_React$PureComponent) {
   _inherits(BackgroundVideo, _React$PureComponent);
 
@@ -236,15 +228,14 @@ var BackgroundVideo = function (_React$PureComponent) {
           ref: function ref(r) {
             return _this2.container = r;
           },
-          className: 'BackgroundVideo ' + this.props.className,
-          style: Object.assign(_extends({}, absolute100, { visibility: visibility }), this.props.style),
+          className: 'BackgroundVideo ' + (this.props.className || ''),
+          style: Object.assign({ visibility: visibility }, this.props.style),
           onClick: this.props.onClick,
           onKeyPress: this.props.onKeyPress,
-          tabIndex: this.props.tabIndex
-        },
+          tabIndex: this.props.tabIndex },
         _typeof(this.props.src) === 'object' ? _react2.default.createElement(
           'video',
-          videoProps,
+          _extends({}, videoProps, { className: this.props.videoClasses }),
           this.props.src.map(function (source, key) {
             return _react2.default.createElement('source', _extends({ key: key }, source));
           })
@@ -264,6 +255,7 @@ BackgroundVideo.propTypes = {
   disableBackgroundCover: _propTypes2.default.bool, // do not apply cover effect (e.g. disable it for specific screen resolution or aspect ratio)
   style: _propTypes2.default.object,
   className: _propTypes2.default.string,
+  videoClasses: _propTypes2.default.string,
   containerWidth: _propTypes2.default.number,
   containerHeight: _propTypes2.default.number,
   src: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.array]).isRequired,

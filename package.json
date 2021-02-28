@@ -1,6 +1,6 @@
 {
   "name": "@elevationdigital/react-background-video-player",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "React background video component with simple player API. Supports inline play on iPhone.",
   "main": "dist/index.js",
   "license": "MIT",
@@ -39,13 +39,9 @@
     "video-player",
     "iPhone-inline-video"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/Jam3/react-background-video-player.git"
-  },
+  "repository": "git://github.com/elevationdigital/react-background-video-player",
   "homepage": "https://github.com/Jam3/react-background-video-player",
   "bugs": {
     "url": "https://github.com/Jam3/react-background-video-player/issues"
-  },
-  "repository": "git://github.com/elevationdigital/react-background-video-player"
+  }
 }
