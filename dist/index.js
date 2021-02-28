@@ -52,10 +52,6 @@ var BackgroundVideo = function (_React$PureComponent) {
     var _this = _possibleConstructorReturn(this, (BackgroundVideo.__proto__ || Object.getPrototypeOf(BackgroundVideo)).call(this, props));
 
     _this._handleVideoReady = function () {
-      if (!_this.props.disableBackgroundCover) {
-        _this._resize();
-      }
-
       _this.setState({ visible: true });
       _this.props.startTime && _this.setCurrentTime(_this.props.startTime);
       _this.props.autoPlay && _this.play();
@@ -118,10 +114,6 @@ var BackgroundVideo = function (_React$PureComponent) {
   }, {
     key: 'componentDidUpdate',
     value: function componentDidUpdate(prevProps) {
-      if ((this.props.containerWidth !== prevProps.containerWidth || this.props.containerHeight !== prevProps.containerHeight) && !this.props.disableBackgroundCover) {
-        this._resize();
-      }
-
       if (this.video && this.props.volume !== prevProps.volume) {
         this.video.volume = this.props.volume;
       }

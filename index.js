@@ -43,14 +43,6 @@ export default class BackgroundVideo extends React.PureComponent {
   }
 
   componentDidUpdate(prevProps) {
-    if (
-      (this.props.containerWidth !== prevProps.containerWidth ||
-        this.props.containerHeight !== prevProps.containerHeight) &&
-      !this.props.disableBackgroundCover
-    ) {
-      this._resize();
-    }
-
     if (this.video && this.props.volume !== prevProps.volume) {
       this.video.volume = this.props.volume;
     }
@@ -64,10 +56,6 @@ export default class BackgroundVideo extends React.PureComponent {
   }
 
   _handleVideoReady = () => {
-    if (!this.props.disableBackgroundCover) {
-      this._resize();
-    }
-
     this.setState({ visible: true });
     this.props.startTime && this.setCurrentTime(this.props.startTime);
     this.props.autoPlay && this.play();
