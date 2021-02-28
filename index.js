@@ -182,7 +182,7 @@ export default class BackgroundVideo extends React.PureComponent {
             ))}
           </video>
         ) : (
-          <video {...videoProps} />
+          <video {...videoProps} className={this.props.videoClasses} />
         )}
       </div>
     );
